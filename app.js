@@ -5,6 +5,7 @@ const app = express()
 //routes
 const postRoutes = require('./routes/post')
 const userRoutes = require('./routes/user')
+const categoryRoutes = require('./routes/category')
 
 mongoose.connect('mongodb://localhost:27017/dsBd',
   { useNewUrlParser: true,
@@ -26,6 +27,7 @@ app.use(express.json())
 //middleware
 app.use('/api/post', postRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/category', categoryRoutes)
 
 
 module.exports = app
